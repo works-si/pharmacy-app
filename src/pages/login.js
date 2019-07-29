@@ -20,8 +20,12 @@ export default class Login extends Component {
       <ImageBackground source={BgLogin} style={styles.container}>
         <Image source={Logo} style={styles.logo} />
         <TextInput style={styles.inputEmail} placeholder="Email" />
-        <TextInput style={styles.inputPassword} placeholder="Senha" />
-        <Text>Esqueceu sua senha?</Text>
+        <TextInput
+          style={styles.inputPassword}
+          secureTextEntry={true}
+          placeholder="Senha"
+        />
+        <Text style={styles.forgotPassword}>Esqueceu sua senha?</Text>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Entrar</Text>
         </TouchableOpacity>
@@ -53,11 +57,16 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 10
   },
+  forgotPassword: {
+    left: 105,
+    marginTop: 10,
+    fontSize: 12
+  },
   button: {
     alignItems: "center",
     width: "60%",
     borderRadius: 0,
-    marginTop: 30,
+    marginTop: 40,
     padding: 15,
     backgroundColor: "#C41814"
   },
