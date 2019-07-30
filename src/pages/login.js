@@ -26,7 +26,12 @@ export default class Login extends Component {
           placeholder="Senha"
         />
         <Text style={styles.forgotPassword}>Esqueceu sua senha?</Text>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            this.props.navigation.navigate("Home");
+          }}
+        >
           <Text style={styles.buttonText}>Entrar</Text>
         </TouchableOpacity>
       </ImageBackground>
@@ -46,25 +51,24 @@ const styles = StyleSheet.create({
   inputEmail: {
     borderBottomWidth: 1,
     borderBottomColor: "#C41814",
-    width: "60%",
+    width: "70%",
     height: 40,
     backgroundColor: "white",
     padding: 10
   },
   inputPassword: {
-    width: "60%",
+    width: "70%",
     height: 40,
     backgroundColor: "white",
     padding: 10
   },
   forgotPassword: {
-    left: 105,
-    marginTop: 10,
-    fontSize: 12
+    fontSize: 12,
+    marginTop: 10
   },
   button: {
     alignItems: "center",
-    width: "60%",
+    width: "70%",
     borderRadius: 0,
     marginTop: 40,
     padding: 15,
