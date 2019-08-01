@@ -24,7 +24,7 @@ export default class Login extends Component {
   render() {
     return (
       <View>
-        <TouchableOpacity onPress={console.log(this.props.navigation)}>
+        <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
           <Text>Open Drawer</Text>
         </TouchableOpacity>
       </View>
