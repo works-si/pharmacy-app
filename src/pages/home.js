@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Button
+} from "react-native";
 import LogoHeader from "../images/logo-header.png";
 
 class LogoTitle extends Component {
@@ -13,22 +20,23 @@ class LogoTitle extends Component {
 }
 
 export default class Login extends Component {
-  static navigationOptions = {
-    headerTitle: <LogoTitle />,
-    headerStyle: {
-      backgroundColor: "#C41814"
-    },
-    headerTintColor: "#fff"
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerTitle: <LogoTitle />,
+      headerLeft: (
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
+          <Text>Open Drawer</Text>
+        </TouchableOpacity>
+      ),
+      headerStyle: {
+        backgroundColor: "#C41814"
+      },
+      headerTintColor: "#fff"
+    };
   };
 
   render() {
-    return (
-      <View>
-        <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
-          <Text>Open Drawer</Text>
-        </TouchableOpacity>
-      </View>
-    );
+    return <View />;
   }
 }
 
